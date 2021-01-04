@@ -1,0 +1,48 @@
+public class Circulo
+{
+   private double raio,d,a,c;
+   
+   public Circulo (double r)
+   {
+      setRaio(r);
+   }  
+   
+   public void setRaio(double r)
+   {
+      if (r < 0) 
+         System.out.println("O raio nao pode ser negativo");
+      else
+         raio = r;   
+   }
+   
+   public double diametro(double r)
+   {
+   
+   return d = 2*r;
+   }
+
+   public double area(double r)
+   {
+   
+   return a = Math.PI*Math.pow(r,2);
+
+   }
+
+   public double circunferencia(double r)
+   {
+   
+   return c = 2*r*Math.PI;
+   
+   }
+
+   public double getRaio()
+   {
+      return raio;   
+   }
+
+   public void exibeDados()
+   {
+       System.out.printf("Dados do Circulo de raio: %.2f\nDiametro: %.2f\nCircunferencia: %.2f\nArea: %.2f\n",getRaio(),diametro(getRaio()),circunferencia(getRaio()),area(getRaio()));
+   }
+   
+}
