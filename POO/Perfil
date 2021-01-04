@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Atividade8_Perfil_MarceloOliveiraSilva {
+	
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Digite o dia do seu nascimento: ");
+		int dia = entrada.nextInt();
+		System.out.print("Digite o mes do seu nascimento: ");
+		int mes = entrada.nextInt();
+		System.out.print("Digite o ano do seu nascimento: ");
+		int ano = entrada.nextInt();
+		
+		int num1 = ((dia*100) + mes)+ (ano);
+		int num2 = num1 / 100;
+		int num3 = num1 % 100;
+		int num4 = (num2 + num3) % 5;
+		
+		switch(num4) {
+		case(0):System.out.println("Voce eh Timido"); break; 
+		case(1):System.out.println("Voce eh Sonhador"); break;
+		case(2):System.out.println("Voce eh Paquerador"); break;
+		case(3):System.out.println("Voce eh Atraente"); break;
+		case(4):System.out.println("Voce eh Irresistivel"); break;
+		}		
+		entrada.close();
+	}
+}
