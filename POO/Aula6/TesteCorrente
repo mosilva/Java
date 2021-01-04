@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class TesteCorrente{
+
+   public static void main(String args[]){
+    
+   ContaCorrente cc2;
+   cc2 = new ContaCorrente(54321,"Maria dos Santos");
+   cc2.verDados();
+
+   Scanner entrada = new Scanner(System.in);
+   
+   System.out.printf("\nValor de saque em c2: ");
+   cc2.saque(entrada.nextDouble());
+   cc2.verDados();
+  
+   }
+}
