@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Atividade4_Media_MarceloOliveiraSilva {
+	 
+public static void main(String[] args) {
+		
+double n1,n2,media;
+Scanner entrada = new Scanner(System.in);
+		
+System.out.print("Digite as duas notas: ");
+n1 = entrada.nextDouble();
+n2 = entrada.nextDouble();
+media = (n1 + n2) / 2;
+	
+	if(media <7) {
+		if(media >= 4){
+			System.out.println("Recuperacao com a media " + media);				
+			}
+		else
+				System.out.println("Reprovado com a media " + media);
+			}
+	else 
+		System.out.println("Aprovado com a media " + media);
+	}	
+}
