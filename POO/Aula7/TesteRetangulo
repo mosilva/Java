@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class TesteRetangulo{
+
+   public static void main(String args[]){
+    
+   Retangulo cc2;
+   cc2 = new Retangulo();
+   cc2.verDados();
+
+   }
+}
