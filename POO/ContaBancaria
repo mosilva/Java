@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Atividade9_ContaBancaria_MarceloOliveiraSilva {
+	
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+	    int conta = 0;
+		
+		// validar que a conta tenha 6 dígitos
+		do {
+		System.out.print("Digite o numero da sua conta: ");
+		conta = entrada.nextInt();		
+		}while(conta<=0 || conta >= 1000000);
+		
+		int s = 0,n = conta;
+		
+		while(n!=0) {
+			s = s + n%10;
+			n = n/10;			
+		}
+			
+		int d = s % 10;
+		
+		entrada.close();		
+		
+		System.out.println("O numero da conta eh: "+ String.format("%06d-", conta) + d);
+	}
+}
