@@ -1,0 +1,18 @@
+public class Atividade6_ClasseString_MarceloOliveiraSilva {
+	
+	public static void main(String[] args) {
+		
+		// toLowerCase e toUpperCase 
+		
+		String teste = "MARCElo OlIvEiRa";
+				
+		System.out.println(teste.toLowerCase());	
+		System.out.println(teste.toUpperCase());
+
+		//trim
+		
+		String teste2 = "     Marcelo Silva";
+		
+		System.out.println(teste2.trim());
+				
+	}
