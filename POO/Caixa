@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Atividade10_Caixa_MarceloOliveiraSilva {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		double comprasTotal = 0, produto = 0;
+		
+		do {
+			System.out.print("Digite o valor da mercadoria: ");
+			produto = entrada.nextDouble();
+			comprasTotal += produto;			
+		}while(produto != 0);
+		
+		if(comprasTotal<50) System.out.printf("valor a pagar: %.2f",comprasTotal*0.95);
+		else if(comprasTotal<=100) System.out.printf("valor a pagar: %.2f",comprasTotal*0.90);
+		else if(comprasTotal<=200) System.out.printf("valor a pagar: %.2f",comprasTotal*0.85);
+		else if(comprasTotal>200) System.out.printf("valor a pagar: %.2f",comprasTotal*0.80);
+	}
+}
