@@ -1,0 +1,66 @@
+public class ContaCorrente
+{
+   private int numeroConta;
+   private double saldo, entrada, saida;
+   private String titular;
+   private double limite;
+
+   
+   public ContaCorrente (int n,String t, double saldo, double l)
+   {
+      titular = t;
+      numeroConta = n;
+      setSaldo(saldo);    
+      limite = l;
+   }     
+      
+   public ContaCorrente (int n,String t, double saldo)
+   {
+      titular = t;
+      numeroConta = n;
+      setSaldo(saldo);    
+      limite = 1000;
+   }  
+   
+      
+   public ContaCorrente (int n,String t)
+   {
+      titular = t;
+      numeroConta = n;
+      setSaldo(0);    
+      limite = 0;
+   }  
+   
+   public void setSaldo(double s)
+   {
+      if (s < 0) 
+         System.out.println("O saldo nao pode ser negativo");
+      else
+         saldo = s;   
+   }
+
+   public void deposito(double entrada)
+   {
+         if(entrada < 0)
+            System.out.printf("Valor de deposito invalido\n\n");
+         else{
+            saldo = saldo + entrada;
+            System.out.printf("saldo total: %.2f\n\n",saldo);} }
+
+   public void saque(double saida)
+   {
+      
+     if(saida < 0)
+            System.out.printf("Valor do saque invalido\n\n");
+     else if (saida > saldo + limite)
+            System.out.printf("não foi possivel realizar o saque por falta de recursos!\n\n");
+     else
+            saldo = saldo - saida;
+            System.out.printf("saldo total: %.2f\n\n",saldo);}
+
+   public void verDados()
+   {
+       System.out.printf("Conta:%d\nTitular: %s\nSaldo: %.2f\nLimite: %.2f\n",numeroConta,titular,saldo,limite);
+   }
+  
+}
