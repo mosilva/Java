@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Atividade7_triangulo_MarceloOliveiraSilva    {
+	
+	public static void main(String[] args) {
+
+		Scanner entrada = new Scanner (System.in);
+		
+		System.out.print("Digite 1ª lado do triangulo: ");
+		double l1 = entrada.nextDouble();
+		System.out.print("Digite 2ª lado do triangulo: ");
+		double l2 = entrada.nextDouble();
+		System.out.print("Digite 3ª lado do triangulo: ");
+		double l3 = entrada.nextDouble();		
+		
+		if(Math.abs(l1-l2) < l3 && l3 < l1+l2 && Math.abs(l3-l1) < l2 && l2 < l3+l1 && Math.abs(l3-l2) < l1 && l1 < l3+l2)
+			{System.out.print("O triangulo eh valido ");
+			if(l1 == l2 && l2 == l3)
+                System.out.println("e equilatero");
+			else if (l1 != l2 && l2 != l3)
+				System.out.println("e escaleno");
+			else 
+				System.out.println("e isoceles");
+			}
+		
+		else
+			System.out.println("O triangulo nao eh valido");
+		
+		entrada.close();
+	}
+}
