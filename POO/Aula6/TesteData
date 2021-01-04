@@ -1,0 +1,11 @@
+public class TesteData {
+	
+	public static void main (String args[])
+	{
+	Data data = new Data(06, 04, 2020);
+	System.out.println("Meu aniversario: " + data.toString());
+	
+	data.setData(29, 02, 2012);
+	System.out.println("Que data e essa? " + data.toString());
+}
+}
