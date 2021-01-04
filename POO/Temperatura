@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Temperatura
+{
+   public static void main (String args[])
+   {
+      Scanner input = new Scanner (System.in);
+      double F;
+      double C;
+            
+      System.out.print("Digite a temperatura em Fahrenheit: ");
+      F = input.nextDouble(); 
+      
+      C = (F-32) * 5/9.0; 
+                 
+      System.out.printf ("%.2f Celsius\n", (5/9));
+   }
+
+}
