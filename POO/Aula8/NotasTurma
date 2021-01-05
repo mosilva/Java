@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class NotasTurma {
+	
+	public static void main(String[] args) {
+		
+		final int ALUNOS = 5;
+		final int PROVAS = 2;
+		
+		int lin, col;
+		double media;
+		
+		double notas[][] = new double [ALUNOS][PROVAS];
+		Scanner entrada = new Scanner (System.in);
+		
+		double totalProvas = 0;
+		
+		for (lin = 0; lin < ALUNOS; lin++) {
+			System.out.printf("\nDigite as notas do %dº aluno: ", lin+1);
+			for (col = 0; col < PROVAS; col++) {
+				notas[lin][col] = entrada.nextDouble();					
+				totalProvas += notas[lin][col];				
+			}			
+		}
+		
+		double mediaTurma = totalProvas/(PROVAS*ALUNOS);
+		
+		System.out.println();
+		System.out.println("Notas e Media");		
+		System.out.printf("\nA media da turma: %2.2f\n",mediaTurma);
+		
+		
+		for (lin = 0; lin < ALUNOS; lin++) {
+			System.out.printf("\nAluno %d: ", lin+1);
+			media = 0;
+			for (col = 0; col < PROVAS; col++) {
+				System.out.printf("%2.2f ",notas[lin][col]);
+				media += notas[lin][col];}
+			double mediaAluno = media/PROVAS;
+			System.out.printf(" - Media %2.2f - %s", mediaAluno,mediaAluno == mediaTurma? "Na media da turma":
+													 mediaAluno > mediaTurma? "Acima da media":"Abaixo da media");			
+			mediaAluno = 0;
+			}
+
+		entrada.close();	
+       }
+	}
