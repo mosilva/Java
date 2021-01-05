@@ -1,0 +1,54 @@
+
+import java.util.Scanner;
+
+public class Questao1Simplificada {
+	
+	public static void main(String[] args) {
+		
+		double valorDivida, dividaTotal, taxaDeJuros, prestacao = 0,valorTotal = 0;
+		int mes, count;
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		do {
+		System.out.print("Digite o valor da divida: ");
+		valorDivida = entrada.nextDouble();		
+		}while (valorDivida <= 0);
+		
+		dividaTotal = valorDivida;
+		
+		do {
+		System.out.print("Digite o valor da taxa de juro (%): ");
+		taxaDeJuros = entrada.nextDouble();		
+		}while (taxaDeJuros < 0);
+		
+		taxaDeJuros = (taxaDeJuros/100.00) + 1.0;
+		
+		do {
+		System.out.print("Digite o numero de prestacoes: ");
+		mes = entrada.nextInt();		
+		}while (mes < 0);
+		
+		count = mes;
+		
+		
+		for (int i = 0; i < mes;i++) {			
+			dividaTotal = dividaTotal * taxaDeJuros;
+			prestacao = dividaTotal/count;
+			valorTotal += prestacao;
+			count --;
+			dividaTotal = dividaTotal - prestacao;					
+			}
+			
+		System.out.printf("\n============================================\n");
+		System.out.printf("\n Valor inicial da divida: %.2f", valorDivida);
+		System.out.printf("\n Taxa de juros fixa: %.2f %%",(taxaDeJuros-1)*100);
+		System.out.printf("\n Numero de prestacoes: %d", mes);
+		System.out.printf("\n Valor total a ser pago: %.2f\n", valorTotal);
+		System.out.printf("\n============================================\n\n");		
+		
+		entrada.close();
+		System.out.println("FIM DO PROGRAMA!");		
+	}
+}
+
