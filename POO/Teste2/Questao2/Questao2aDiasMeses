@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Questao2aDiasMeses{
+
+	public static void main(String[] args) {
+		
+      Scanner entrada = new Scanner(System.in);
+         
+      int diasDoMes[] = new int[13];   
+		
+      int dia=0;
+      
+		String meses[] = {"","Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago",
+		   "Set","Out","Nov","Dez"
+      };
+		
+      for (int i=1;i<13;i++){
+         System.out.println("Digite a qtd de dias de "+meses[i]);
+         dia = entrada.nextInt();
+         diasDoMes[i] = dia;        
+      }
+      
+      System.out.println("\n Dias e meses do ano\n");
+      
+      System.out.printf("%s %9s\n", "Mes","Dias");
+		
+		for (int i = 1; i < diasDoMes.length; i++) {
+			System.out.printf("%02d (%3s) %4d\n",i,meses[i],diasDoMes[i]);}
+		} 
+   }
+
+
+
+	
+		
+
+	
