@@ -1,0 +1,31 @@
+public class Carro extends Veiculo {
+	protected int numPortas;
+	protected int anoModelo;
+	
+	public Carro (String modelo, String placa, int anoFabr,int anoModelo, int numPortas, double valor) {
+		super(modelo,placa,anoFabr,valor);
+		setPortas(numPortas);
+		setAnoModelo(anoModelo);
+	}
+
+	public void setPortas(int numPortas) {
+		this.numPortas = numPortas;
+	}
+	
+	public int getPortas() {
+		return numPortas;
+	}
+	
+	public void setAnoModelo(int anoModelo) {
+		this.anoModelo = anoModelo;
+	}
+	
+	public int getAnoModelo() {
+		return anoModelo;		
+	}
+	
+	public void imprime() {
+		super.imprime();
+		System.out.printf("Modelo: %d\nNumero de portas: %d",anoModelo,numPortas);
+			}	
+}
