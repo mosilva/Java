@@ -1,0 +1,77 @@
+import java.util.Arrays;
+
+public class IntegerSet {
+	
+	private static final int tamanho = 101;
+	private boolean[] itens = new boolean[tamanho];
+
+	
+	public IntegerSet()	{
+		Arrays.fill(itens,false);
+	}
+
+	public IntegerSet(int l[]) {
+		Arrays.fill(itens,false);
+		for (int i = 0;	i <l.length;i++){
+			if(l[i] >= 0 && l[i] <= 100) {
+				itens[l[i]] = true;			
+       		}  
+		}
+	}	
+	
+	public String insertElement (int k) {
+			if(k >= 0 && k <= 100) {
+				itens[k] = true;
+				return "numero inserido!";				
+			} else	return "numero fora do intervalo definido [0 ; 100]";
+	}
+ 
+
+	public String deleteElement (int m) {
+		if(m >= 0 && m <= 100) {
+				if (itens[m] == true) {
+				    itens[m] = false;
+				    return "numero removido!";
+				 } else return "numero nao encontrado no vetor!";
+			} else
+				return "numero fora do intervalo definido [0 ; 100]";
+	}
+
+	public IntegerSet union(IntegerSet um) {
+		IntegerSet union = new IntegerSet();
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] == true || um.itens[i] == true) {
+				union.itens[i] = true;
+			} else union.itens[i] = false;
+		}
+		return union;		
+	}
+	
+	public IntegerSet intersection(IntegerSet um) {
+		IntegerSet intersection = new IntegerSet();
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i] == true && um.itens[i] == true ) {
+				intersection.itens[i] = true;
+			} else intersection.itens[i] = false;
+		}
+		return intersection;		
+	}
+	
+	public String toSetString() {
+		String finalConvert = "conjunto = [ ";
+		for (int i = 0; i < itens.length; i++) {
+			if (itens[i]) {
+			finalConvert += i + " ";	
+		}		
+	} return finalConvert + "]";}
+		
+	
+	public boolean isEqualTo (IntegerSet um){
+	    for(int i=0; i <= 100; i++) {
+	        if(itens[i] != um.itens[i])
+		     return false;
+		}
+	    return true;
+	}
+			
+}
