@@ -1,0 +1,13 @@
+public class TesteCaminhao {
+	
+	public static void main(String[] args) {
+		 Caminhao c = new Caminhao("Mercedes","XYZ3456",2000,50000,10,3);
+		 
+		 c.imprime();
+		 c.deprecia(10);
+		 
+		 System.out.println("\n\nCaminhao depreciado");
+		 c.imprime();	
+	}
+
+}
