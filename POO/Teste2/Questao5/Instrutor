@@ -1,0 +1,38 @@
+public class Instrutor extends Funcionario {
+
+   private String disciplina;
+   private int horasMensais;
+   private float valorHoraAula;
+   
+   public Instrutor(String nome, String mail,String disciplina) {
+         super(nome,mail); 
+         this.disciplina = disciplina;
+   }
+
+  	public void setDisciplina(String disc) {
+		disciplina = disc;
+	}
+      
+  	public String getDisciplina() {
+		return disciplina;
+	}
+
+  	public void setHorasMensais(int horas) {
+		horasMensais = horas;
+	}
+   
+   public void setValorHoraAula(float vlr) {
+		this.valorHoraAula = vlr;
+	}
+      
+   public float pagamento(){
+      return (valorHoraAula*horasMensais);   
+   }
+   
+   public void exibeDados() {
+		super.exibeDados();
+      System.out.println("Valor hora-aula: R$ "+ valorHoraAula);   
+      System.out.println("Qtd de horas mensais: "+ horasMensais);   
+     	System.out.println("Pagamento: R$ "+ valorHoraAula*horasMensais);      
+	}
+}
