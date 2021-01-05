@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Questao3cNotas{
+
+	public static void main(String[] args) {
+		        
+      Scanner entrada = new Scanner(System.in);
+      Scanner entrada2 = new Scanner(System.in);
+      
+      final int qtd = 40;
+      
+      String nomeAluno[] = new String[qtd];
+      double PrimeiraNota[] = new double[qtd];   
+		double SegundaNota[] = new double[qtd];
+      double TerceiraNota[] = new double[qtd];
+      
+      double nota=0;
+      String nome = "";
+		
+      for (int i=0;i<qtd;i++){
+         System.out.println("Digite o nome do aluno do "+ (i+1) + "o aluno:");
+         nome = entrada2.nextLine();
+         nomeAluno[i] = nome; 
+         
+         System.out.println("Digite a primeira nota do aluno "+nomeAluno[i]+":");
+         nota= entrada.nextDouble();
+         PrimeiraNota[i] = nota;   
+         
+         System.out.println("Digite a segunda nota do aluno "+nomeAluno[i]+":");
+         nota= entrada.nextDouble();
+         SegundaNota[i] = nota;   
+         
+         System.out.println("Digite a terceira nota do aluno "+nomeAluno[i]+":");
+         nota= entrada.nextDouble();
+         TerceiraNota[i] = nota;    
+         
+         System.out.println();
+      }
+      
+      System.out.println("\nAlunos e os 3 conceitos\n"); 
+	
+		for (int i = 0; i < qtd; i++) {
+			System.out.printf("%s - Nota 1: %.2f / Nota 2: %.2f / Nota 3: %.2f \n",nomeAluno[i],PrimeiraNota[i],SegundaNota[i],TerceiraNota[i]);}                
+		} 
+   }
