@@ -1,0 +1,84 @@
+
+public class Questao3 {
+	
+	public static void main(String[] args) {
+		
+		// instanciar elementos
+		
+		int[] valores = {0,1,2,7};
+		int[] valores2 = {1,2,3,4,150};
+		
+		IntegerSet t1 = new IntegerSet(valores);
+		IntegerSet t2 = new IntegerSet(valores2);
+		IntegerSet t3 = new IntegerSet();
+		
+		/////// inserir elementos  ///////////
+		
+		
+		System.out.println("======= Inserir elementos=========\n");
+		
+		// concluido
+		
+		System.out.println(t2.insertElement(0));
+		System.out.println(t2.toSetString());
+		System.out.println();
+		
+		//fora do intervalo
+		
+		System.out.println(t2.insertElement(150));
+		System.out.println(t2.toSetString());	
+		System.out.println();
+		
+		/////// remover elementos  ///////////
+
+		System.out.println("======= Remover elementos=========\n");		
+		
+		// concluido
+		
+		System.out.println(t2.deleteElement(0));
+		System.out.println(t2.toSetString());
+		System.out.println();
+		
+		//nao encontrado no vetor
+		
+		System.out.println(t2.deleteElement(50));
+		System.out.println(t2.toSetString());	
+		System.out.println();
+		
+		//fora do intervalo
+		
+		System.out.println(t2.deleteElement(200));
+		System.out.println(t2.toSetString());	
+		System.out.println();
+		
+		
+		/////// União ///////////
+
+		System.out.println("======= Uniao dos conjuntos =========\n");		
+		
+		
+		t3 = t1.union(t2);
+				
+		System.out.println(t1.toSetString() + " U " + t2.toSetString() + " = " + t3.toSetString());
+		
+		/////// Interseccão ///////////
+
+		System.out.println("\n======= Interseccao dos conjuntos =========\n");	
+		
+		t3 = t2.intersection(t1);
+		
+		System.out.println(t1.toSetString() + "   " + t2.toSetString() + " = " + t3.toSetString());
+		
+		/////// igual ///////////
+
+		System.out.println("\n======= Comparacao dos conjuntos =========\n");	
+		
+		System.out.print(t2.toSetString() + " == " + t1.toSetString() + "? " + t2.isEqualTo(t1));
+		System.out.println();
+	
+		System.out.println("\n======= Comparacao dos conjuntos =========\n");		
+		int[] valores3 = {1,2,3,4};
+		IntegerSet t4 = new IntegerSet(valores3);
+		System.out.print(t2.toSetString() + " == " + t4.toSetString() + "? " + t2.isEqualTo(t4));		
+	}
+}
