@@ -1,0 +1,55 @@
+
+import java.util.Scanner;
+
+public class Questao2 {
+	
+	public static void main(String[] args) {
+		
+		double n,x,y;
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		do{
+		System.out.print("Digite a quantidade de pontos para verificacao: ");
+		n = entrada.nextDouble();
+		} while(n < 0);
+		
+		System.out.println("\n========= Coordenadas ===========\n");
+		
+		for (int i =0; i < n;i++) {
+		
+		System.out.printf("==== Ponto %d =====\n\n", i+1);
+			
+		System.out.print("Digite o valor x: ");
+		x = entrada.nextDouble();
+			
+		System.out.print("Digite o valor y: ");
+		y = entrada.nextDouble();
+			
+		if (x == 0 && y == 0) {
+			System.out.println("\nOrigem\n");	
+		} else if (x != 0 && y == 0 ) {
+			System.out.println("\nEixo X\n");			
+		} else if (x == 0 && y != 0 ) {
+			System.out.println("\nEixo Y\n");		
+		} else if (x > 0) { 
+			if(y > 0) {
+				System.out.println("\n1º Quadrante\n");
+			} 	else System.out.println("\n4º Quadrante\n");	
+			}
+		else {
+			if(y > 0) {
+				System.out.println("\n2º Quadrante\n");
+			}	else System.out.println("\n3º Quadrante\n");
+			}
+		
+		
+		}
+			
+		entrada.close();
+		
+		System.out.println("FIM DO PROGRAMA!");
+		
+	}
+
+}
