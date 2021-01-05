@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class TesteClasseFuncionarios {
+	
+	public static void main(String[] args) {
+		
+      Scanner entradaS = new Scanner (System.in);
+      Scanner entradaF = new Scanner (System.in);
+      Scanner entradaI = new Scanner (System.in);
+      
+      final int qtd = 5;
+      String var1,var2,var3;
+      int var4;
+      float var5;
+      
+      Funcionario[] funcionario = new Funcionario[qtd];
+      
+      for (int i=0;i<qtd;i++){
+      System.out.print("\nDigite 1 - programador ou 2 - instrutor: ");
+      var4 = entradaI.nextInt();         
+            
+      while(var4 != 1 && var4 !=2){
+              System.out.println("\nAtencao! Digite uma opcao valida: 1 - programador ou 2 - instrutor:");
+              var4 = entradaI.nextInt();   
+         }
+      
+      System.out.print("Digite o nome: ");
+      var1 = entradaS.nextLine();
+       
+      System.out.print("Digite o email: ");
+      var2 = entradaS.nextLine();                           
+      
+      if (var4 == 1) {
+
+         System.out.print("Digite a linguagem: ");
+         var3 = entradaS.nextLine();
+         
+         Programador prog = new Programador(var1,var2,var3);
+         
+         System.out.print("Digite o salario: ");
+         prog.setSalario(entradaF.nextFloat());
+         
+         funcionario[i] = prog;                  
+       } 
+       
+       else {
+                                            
+         System.out.print("Digite a disciplina: ");
+         var3 = entradaS.nextLine();
+         
+         Instrutor instr = new Instrutor(var1,var2,var3);
+         
+         System.out.print("Digite o valor da hora aula (R$): ");
+         instr.setValorHoraAula(entradaF.nextInt());
+         
+         System.out.print("Digite a qtd de horas mensais: ");
+         instr.setHorasMensais(entradaI.nextInt());
+         
+         funcionario[i] = instr;     
+         
+      } 
+     }
+   
+   System.out.println("\nQUADRO DE FUNCIONARIOS");  
+     
+   for (Funcionario func: funcionario){
+          func.exibeDados();   
+   }
+  }
+}
