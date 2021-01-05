@@ -1,0 +1,31 @@
+public class Caminhao extends Veiculo {
+		
+		protected int capacidade, numeroDeEixos;
+
+		public Caminhao (String modelo, String placa, int anoFabr,int anoModelo, int capacidade, int numeroDeEixos) {
+			super(modelo,placa, anoFabr, anoModelo);
+			setCapacidade(capacidade);
+			setNumeroDeEixos(numeroDeEixos);
+		}
+		
+		public void setCapacidade(int capacidade) {
+			this.capacidade = capacidade;
+		}
+		
+		public int getCapacidade() {
+			return capacidade;
+		}
+		
+		public void setNumeroDeEixos(int numeroDeEixos) {
+			this.numeroDeEixos = numeroDeEixos;
+		}
+		
+		public int getNumeroDeEixo() {
+			return numeroDeEixos;
+		}
+		
+		 public void imprime() {
+			 super.imprime();
+			 System.out.printf("Capacidade: %d\nNumero de eixos: %d",capacidade,numeroDeEixos);			 
+		 }
+}
