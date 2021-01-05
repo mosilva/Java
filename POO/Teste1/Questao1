@@ -1,0 +1,84 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Questao1 {
+	
+	public static void main(String[] args) {
+		
+		double valorDivida, dividaTotal, taxaDeJuros, prestacao = 0,valorTotal = 0;
+		int mes, count;	
+		String calculo;
+
+		Scanner entrada = new Scanner(System.in);
+		
+		do {
+		System.out.print("Digite o valor da divida: ");
+		valorDivida = entrada.nextDouble();		
+		}while (valorDivida <= 0);
+		
+		dividaTotal = valorDivida;
+		
+		do {
+		System.out.print("Digite o valor da taxa de juro (%): ");
+		taxaDeJuros = entrada.nextDouble();		
+		}while (taxaDeJuros < 0);
+		
+		taxaDeJuros = (taxaDeJuros/100.00) + 1.0;
+		
+		do {
+		System.out.print("Digite o numero de prestacoes: ");
+		mes = entrada.nextInt();		
+		}while (mes < 0);
+		
+		count = mes;
+		
+		System.out.println();
+		
+		String[][] parcelar = new String[mes+2][4];
+		
+		parcelar[0][0] = "Mes";
+		parcelar[0][1] = "Divida Total";
+		parcelar[0][2] = "Prestacao";
+		parcelar[0][3] = "Divida restante";
+		
+		parcelar[1][0] = "0";
+		parcelar[1][1] = String.format("%.2f", dividaTotal);
+		parcelar[1][2] = "  -  ";
+		parcelar[1][3] = String.format("%.2f", dividaTotal);
+		
+		for (int i = 2; i < parcelar.length;i++) {
+			for (int j = 0; j < parcelar[i].length; j++) {
+				if(j==0) {
+					parcelar[i][j] = String.format("%d",i-1);
+				} else if(j == 1) {
+					calculo = String.format("%.2f * %.2f = %.2f",dividaTotal, taxaDeJuros, dividaTotal * taxaDeJuros);
+					parcelar[i][j] = calculo;	
+					dividaTotal = dividaTotal * taxaDeJuros;
+				} else if (j == 2) {
+					calculo = String.format("%.2f / %d = %.2f",dividaTotal, count,dividaTotal/count);
+					parcelar[i][j] = calculo;	
+					prestacao = dividaTotal/count;
+					valorTotal += prestacao;					
+					count --;
+				} else {
+					calculo = String.format("%.2f - %.2f = %.2f",dividaTotal, prestacao,dividaTotal - prestacao);
+					parcelar[i][j] = calculo;	
+					dividaTotal = dividaTotal - prestacao;}		
+				}
+		}
+			for (String[] imprimir : parcelar) {
+				System.out.println(Arrays.toString(imprimir));
+			}
+			
+		System.out.printf("\n============================================\n");
+		System.out.printf("\n Valor inicial da divida: %.2f", valorDivida);
+		System.out.printf("\n Taxa de juros fixa: %.2f %%",(taxaDeJuros-1)*100);
+		System.out.printf("\n Numero de prestacoes: %d", mes);
+		System.out.printf("\n Valor total a ser pago: %.2f\n", valorTotal);
+		System.out.printf("\n============================================\n\n");
+		
+		entrada.close();
+		System.out.println("FIM DO PROGRAMA!");
+	}
+}
